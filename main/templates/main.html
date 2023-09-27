@@ -29,12 +29,12 @@
                 <td>{{product.date_added}}</td>
                 <td>
                     <a href="{% url 'main:edit_product' product.pk %}">
-                        <button>
+                        <button type="button" class="btn btn-secondary">
                             Edit
                         </button>
                     </a>
                     <a href="{% url 'main:delete_product' product.pk %}">
-                        <button>
+                        <button type="button" class="btn btn-danger">
                             Delete
                         </button>
                     </a>
@@ -49,12 +49,12 @@
 
 
     <a href="{% url 'main:create_product' %}">
-        <button>
+        <button type="button" class="btn btn-primary">
             Add New Product
         </button>
     </a>
     <a href="{% url 'main:logout' %}">
-        <button>
+        <button type="button" class="btn btn-danger">
             Logout
         </button>
     </a>
