@@ -2,7 +2,21 @@
 
 
 {% block content %}
-{% include 'navbar.html' %} 
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">{{ name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="{% url 'main:logout' %}">
+            <button type="button" class="btn btn-danger">
+                Logout
+            </button>
+        </a>
+        </div>
+    </nav>
+    
     <h1>Shopping List Page</h1>
 
     <h5>Name:</h5>
@@ -11,17 +25,23 @@
     <h5>Class:</h5>
     <p>{{class}}</p>
     
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Description</th>
-            <th>Date Added</th>
-        </tr>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date Added</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        
         {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
 
         {% for product in products %}
+        <tbody>
+
+        </tbody>
             <tr>
                 <td>{{product.name}}</td>
                 <td>{{product.price}}</td>
